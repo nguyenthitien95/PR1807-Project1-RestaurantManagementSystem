@@ -5,10 +5,24 @@
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%#= stylesheet_link_tag    'font-awesome-4.7.0/css/font-awesome.min', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%#= stylesheet_link_tag    'themify/themify-icons', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
   </head>
 
   <body>
-    <%= yield %>
+    <%= render 'layouts/header' %>
+    <!-- Title Page -->
+    <%#= content_tag(:section, class: "bg-title-page flex-c-m p-t-160 p-b-80 p-l-15 p-r-15", style:"background-image: url(bg-title-#{yield(:title)}-page.jpg);") do %>
+      <%#= content_tag(:h2, yield(:title), class: "tit6 t-center") %>
+    <%# end %>
+    <div>
+      <%= yield %>
+    </div>
+    <%= render 'layouts/footer' %>
+    <script type="text/javascript">
+        $('.parallax100').parallax100();
+    </script>
   </body>
 </html>
