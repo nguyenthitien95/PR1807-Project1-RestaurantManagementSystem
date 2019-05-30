@@ -1,0 +1,21 @@
+<% provide :title, @user.name %>
+<div class="row">
+  <aside class="col-md-4">
+    <section>
+      <%= render @user %>
+    </section>
+<!--    <section class="stats">-->
+      <%#= render "shared/stats" %>
+<!--    </section>-->
+  </aside>
+
+<!--  <div class="col-md-8">-->
+    <%# if @user.entries.any? %>
+<!--      <h3>Entry (<%#= @user.entries.count %>)</h3>-->
+<!--      <ol class="entries">-->
+        <%#= render @entries %>
+<!--      </ol>-->
+      <%#= will_paginate @entries %>
+    <%# end %>
+<!--  </div>-->
+</div>
