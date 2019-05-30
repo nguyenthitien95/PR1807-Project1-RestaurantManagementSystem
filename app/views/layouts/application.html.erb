@@ -4,22 +4,22 @@
     <title><%= full_title yield(:title) %></title>
     <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%#= stylesheet_link_tag    'font-awesome-4.7.0/css/font-awesome.min', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%#= stylesheet_link_tag    'themify/themify-icons', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => "reload" %>
+    <%#= stylesheet_link_tag    "font-awesome-4.7.0/css/font-awesome.min", media: "all", "data-turbolinks-track": "reload" %>
+    <%#= stylesheet_link_tag    "themify/themify-icons", media: "all", "data-turbolinks-track": "reload" %>
+    <%= javascript_include_tag "application", "data-turbolinks-track" => "reload" %>
 
   </head>
 
   <body>
-    <%= render 'layouts/header' %>
-    <%= render 'layouts/sidebar' %>
+    <%= render "layouts/header" %>
+    <%= render "layouts/sidebar" %>
 
     <!-- Title Page -->
     <%= raise_image_title yield(:title) %>
     <div>
       <%= yield %>
     </div>
-    <%= render 'layouts/footer' %>
+    <%= render "layouts/footer" %>
   </body>
 </html>

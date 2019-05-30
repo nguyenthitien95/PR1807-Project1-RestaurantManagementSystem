@@ -6,7 +6,7 @@ class CreateStaffs < ActiveRecord::Migration[5.1]
       t.string :password_digest
       t.string :phone_number
       t.string :address
-      t.string :gender, default: 'male'
+      t.string :gender, default: "male"
       t.date :birth_date
       t.boolean :status, default: true
       t.references :position, foreign_key: true
