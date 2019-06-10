@@ -33,15 +33,42 @@ $gray-medium-light: #eaeaea;
 }
 /* forms */
 
-input, textarea, select, .uneditable-input {
-  border: 1px solid #bbb;
+text, textarea, select {
+  border: solid 1px #bbb;
   width: 100%;
   margin-bottom: 15px;
   @include box_sizing;
 }
 
+label{
+  margin-top: 15px;
+}
+
 input {
   height: auto !important;
+}
+
+.checkbox-status input{
+  margin: 15px auto;
+}
+.checkbox-status label {
+  display: inline-block;
+  margin-top: 0; /* I added this after I posted my reply */
+  vertical-align: middle; /* Fixes any weird issues in Firefox and IE */
+}
+
+textarea{
+  height: 200px !important;
+}
+
+.select-image{
+  margin-bottom: 15px;
+}
+
+.image-preview{
+  width: 100%;
+  height: auto;
+  border: 1px solid #bbb;
 }
 
 #error_explanation {
@@ -59,14 +86,14 @@ input {
   }
 }
 
-.checkbox {
-  margin-top: -10px;
-  margin-bottom: 10px;
-  span {
-    margin-left: 20px;
-    font-weight: normal;
-  }
-}
+//.checkbox {
+//  margin-top: -10px;
+//  margin-bottom: 10px;
+//  span {
+//    margin-left: 20px;
+//    font-weight: normal;
+//  }
+//}
 
 #session_remember_me {
   width: auto;
@@ -82,5 +109,43 @@ input {
     overflow: auto;
     padding: 10px 0;
     border-bottom: 1px solid $gray-lighter;
+  }
+}
+
+//---------dish----------//
+
+.card{
+  width: 100%;
+  max-width: 250px;
+  height: 350px;
+  margin: 10px auto;
+  border: solid 1px #958e88;
+  padding: 0;
+  .card-text{
+    margin: 10px;
+  }
+  .card-title{
+    margin: 10px;
+  }
+  .card-img-top{
+    height: 200px;
+  }
+}
+
+.dish-info{
+  .rate{
+    li{
+      display: inline;
+    }
+  }
+  .dish-price{
+    color: red;
+    font-size: large;
+  }
+  .btn-default{
+    border: solid 1px #958e88;
+  }
+  .dish-image{
+    border-radius: 5%;
   }
 }

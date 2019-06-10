@@ -58,15 +58,19 @@ end
     date_time: DateTime.now)
 end
 
-Category.create!(name: "category 1", description: "no des", status: true)
-Category.create!(name: "category 5", description: "no des", status: true, parent_id: 1)
-Category.create!(name: "category 6", description: "no des", status: true, parent_id: 1)
-Category.create!(name: "category 7", description: "no des", status: true, parent_id: 1)
+Category.create!(name: "food", description: "no des", status: true)
+Category.create!(name: "drink", description: "no des", status: true)
+Category.create!(name: "main dishes", description: "no des", status: true, parent_id: 1)
+Category.create!(name: "dessert", description: "no des", status: true, parent_id: 1)
+Category.create!(name: "appetizer", description: "no des", status: true, parent_id: 1)
+Category.create!(name: "alcohol", description: "no des", status: true, parent_id: 2)
+Category.create!(name: "soft drink", description: "no des", status: true, parent_id: 2)
 
-10.times do
-  Dish.create!(name: Faker::Food.name, description: "no des",
+31.times do |n|
+  Dish.create!(name: Faker::Food.name, description: Faker::Lorem.sentence,
     price: (1..10).to_a.sample * 10_000, promotion: (0..100).to_a.sample,
-    status: true, category: Category.all.sample)
+    status: true, category: Category.all.sample,
+    image: File.open("/home/nvt/Desktop/x/food-#{n+1}.jpg"))
 end
 
 20.times do
