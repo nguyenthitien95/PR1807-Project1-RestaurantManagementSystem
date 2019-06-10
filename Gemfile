@@ -29,7 +29,6 @@ gem "hamburgers", "~> 1.1", ">= 1.1.3"
 gem "slick_rails", "~> 1.5", ">= 1.5.9"
 gem "animate-scss", "~> 0.0.5"
 gem "select2-rails", "~> 4.0", ">= 4.0.3"
-gem "rubocop", "~> 0.70.0"
 
 group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]
