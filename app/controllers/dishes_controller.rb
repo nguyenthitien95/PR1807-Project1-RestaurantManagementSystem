@@ -32,7 +32,7 @@ class DishesController < ApplicationController
   end
 
   def index
-    @dishes = Dish.paginate page: params[:page], per_page: 12
+    @dishes = Dish.only_display.paginate page: params[:page], per_page: 12
   end
 
   private
