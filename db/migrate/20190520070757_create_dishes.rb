@@ -6,7 +6,7 @@ class CreateDishes < ActiveRecord::Migration[5.1]
       t.float :price
       t.integer :promotion
       t.string :status
-      t.references :category 
+      t.references :category
       t.timestamps
     end
   end

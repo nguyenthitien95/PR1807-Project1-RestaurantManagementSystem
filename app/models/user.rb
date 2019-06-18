@@ -1,16 +1,22 @@
 class User < ApplicationRecord
   has_many :reservations, dependent: :destroy
+  has_many :salaries
+  belongs_to :position, optional: true
   before_save :downcase_email
-  attr_accessor :remember_token, :activation_token, :reset_token
   before_create :create_activation_digest
+  attr_accessor :remember_token, :activation_token, :reset_token
+
+  enum gender: {male: 0, female: 1, other: 2}
+  enum permission: {user: 0, staff: 1, editor: 2, admin: 3}
+  scope :all_staff, -> {where permission: :staff}
 
   validates :name,  presence: true, length: {maximum: 50},
-            format: {with: /[a-zA-Z\s]{1,50}/}
+    format: {with: /[a-zA-Z\s]{1,50}/}
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   VALID_PHONE_REGEX = /[+]{0,1}([0-9]{2,4})?[-. ]?([0-9]{3})[-. ]?([0-9]{4})/
   validates :email, presence: true, length: {maximum: 255},
-            format: {with: VALID_EMAIL_REGEX},
-            uniqueness: {case_sensitive: false}
+    format: {with: VALID_EMAIL_REGEX},
+    uniqueness: {case_sensitive: false}
   validates :phone_number, presence: true, format: {with: VALID_PHONE_REGEX}
   validates :address, presence: true, length: {minimum: 5, maximum: 150}, allow_nil: true
 
